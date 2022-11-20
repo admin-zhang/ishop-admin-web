@@ -54,29 +54,6 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-
-  {
-    path: '/sms',
-    component: Layout,
-    redirect: '/sms/admin',
-    name: 'ums',
-    meta: { title: '权限', icon: 'sms' },
-    children: [
-      {
-        path: 'getInfoList',
-        name: 'admin',
-        component: () => import('@/views/ums/admin/index'),
-        meta: { title: '用户列表', icon: 'el-icon-user-solid' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
