@@ -3,7 +3,7 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
 
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">ishop-admin-web</h3>
       </div>
 
       <el-form-item prop="username">
@@ -61,8 +61,8 @@ export default {
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 8) {
-        callback(new Error('密码不能小于8位'))
+      if (value.length < 3) {
+        callback(new Error('密码不能小于3位'))
       } else {
         callback()
       }
@@ -80,14 +80,6 @@ export default {
       passwordType: 'password',
       // dialogVisible:false,
       // supportDialogVisible:false
-    }
-  },
-  created() {
-    if(this.loginForm.username === undefined||this.loginForm.username==null||this.loginForm.username===''){
-      this.loginForm.username = 'admin';
-    }
-    if(this.loginForm.password === undefined||this.loginForm.password==null){
-      this.loginForm.password = '';
     }
   },
   methods: {
